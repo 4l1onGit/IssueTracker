@@ -1,0 +1,26 @@
+import Link from "next/link";
+import React from "react";
+import { RiAlarmWarningFill } from "react-icons/ri";
+
+const NavBar = () => {
+  const links = [
+    { label: "Dashboard", href: "/" },
+    { label: "Issues", href: "/issues" },
+  ];
+  return (
+    <nav className="flex space-x-6 borde-b mb-5 px-5 h-14 items-center">
+      <Link href="/">
+        <RiAlarmWarningFill />
+      </Link>
+      <ul className="flex space-x-6">
+        {links.map((link) => (
+          <Link key={link.href} href={link.href}>
+            {link.label}
+          </Link>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default NavBar;
