@@ -34,7 +34,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
             <Select.Label>Suggestions</Select.Label>
             <Select.Item value="">Unassigned</Select.Item>
             {users?.map((user) => (
-              <Select.Item key={user.id} value={user.id}>
+              <Select.Item key={user.id} value={user.id || ""}>
                 {user.name}
               </Select.Item>
             ))}
